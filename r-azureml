@@ -1,0 +1,11 @@
+FROM dslheramb/dsl-gluonts-forecast:latest_4.0.3
+
+
+#### for Azure ML ####
+RUN pip install --no-cache-dir azureml-defaults && \
+	pip3 install --no-cache-dir azureml-defaults
+	
+RUN install2.r --error --deps TRUE \
+		remotes \
+		optparse \
+		azuremlsdk
